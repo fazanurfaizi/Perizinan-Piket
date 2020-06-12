@@ -124,7 +124,7 @@ class TeacherModel {
 		$this->db->bind(":id", $data['id']);
 		if($this->db->execute()){			
 			if($this->deleteTeachertypesById($data['id'])){
-				foreach ($data['typesChecked'] as $typeKey => $type) {
+				foreach ($data['typesChecked'] as $matpelKey => $type) {
 					if(!empty($type)){
 						$this->db->query("INSERT INTO guru_matpel (guru_id, matpel_id) VALUES (:guru_id, :matpel_id)");
 						$this->db->bind(":guru_id", $data['id']);
